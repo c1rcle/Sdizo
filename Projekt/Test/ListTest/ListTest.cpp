@@ -195,16 +195,16 @@ double ListTest::removeRandomTest(int size)
 
 double ListTest::findTest(int size)
 {
-	//Wynik to średnia ze 100 wyszukań ze zmienionym za każdym razem datasetem.
-	double average = 0;
-	for (int i = 0; i < 100; i++)
-	{
-		populateList(size);
-		int element = list->get(rand() % list->getSize());
-		measurement.startTimer();
-		list->find(element);
-		measurement.stopTimer();
-		average += measurement.getDuration();
-	}
-	return average / 100;
+    //Wynik to średnia ze 100 wyszukań ze zmienionym za każdym razem datasetem.
+    double average = 0;
+    for (int i = 0; i < 100; i++)
+    {
+        populateList(size);
+        int element = list->get(rand() % list->getSize());
+        measurement.startTimer();
+        list->find(element);
+        measurement.stopTimer();
+        average += measurement.getDuration();
+    }
+    return average / 100;
 }

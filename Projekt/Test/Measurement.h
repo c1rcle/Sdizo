@@ -4,19 +4,19 @@
 class Measurement
 {
 private:
-	/// Zmienna przechowuj¹ca informacjê o d³ugoœci wykonywania pewnego segmentu (mikrosekundy).
+    /// Zmienna przechowuj¹ca informacjê o d³ugoœci wykonywania pewnego segmentu (mikrosekundy).
     double duration;
-	/// Zmienna przechowuj¹ca czas startu pomiaru.
+    /// Zmienna przechowuj¹ca czas startu pomiaru.
     std::chrono::high_resolution_clock::time_point startTime;
-	/// Zmienna przechowuj¹ca czas koñca pomiaru.
+    /// Zmienna przechowuj¹ca czas koñca pomiaru.
     std::chrono::high_resolution_clock::time_point endTime;
 public:
-	/// Konstruktor klasy Measurement.
+    /// Konstruktor klasy Measurement.
     Measurement();
-	/// Rozpoczyna odmierzanie czasu.
+    /// Rozpoczyna odmierzanie czasu.
     void startTimer();
-	/// Koñczy odmierzanie czasu.
+    /// Koñczy odmierzanie czasu.
     void stopTimer();
-	/// Zwraca czas w mikrosekundach, który up³yn¹³ dla ostatniego pomiaru.
+    /// Zwraca czas w mikrosekundach, który up³yn¹³ dla ostatniego pomiaru.
     double getDuration();
 };

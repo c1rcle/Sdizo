@@ -4,8 +4,8 @@
 
 int main()
 {
-	//Mo¿liwoœæ wyœwietlania znaków UTF-8 w konsoli Windows.
-	std::system("@chcp 65001 >nul");
+    //Mo¿liwoœæ wyœwietlania znaków UTF-8 w konsoli Windows.
+    std::system("@chcp 65001 >nul");
     std::srand(std::time(nullptr));
     auto * menu = new Menu();
     auto * array = new ArrayItem();
