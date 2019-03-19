@@ -3,15 +3,15 @@
 
 BinaryHeapItem::BinaryHeapItem()
 {
-	//Ustawaimy zmienne definiuj¹ce opis submenu.
+    //Ustawiamy zmienne definiuj¹ce opis submenu.
     menuDescription = "Kopiec binarny (heap)";
     menuCommand = "heap";
 }
 
 void BinaryHeapItem::printMenu()
 {
-	//Wypisanie menu dla kopca.
-	std::cout << std::endl;
+    //Wypisanie menu dla kopca.
+    std::cout << std::endl;
     std::cout << "Menu dla kopca binarnego" << std::endl;
     std::cout << "1. Wczytaj z pliku (load)" << std::endl;
     std::cout << "2. Usun (delete)" << std::endl;
@@ -26,7 +26,7 @@ void BinaryHeapItem::printMenu()
 
 void BinaryHeapItem::processInput()
 {
-	//Tworzymy nowy obiekt klasy kopca i wchodzimy do pêtli obs³ugi opcji.
+    //Tworzymy nowy obiekt klasy kopca i wchodzimy do pêtli obs³ugi opcji.
     heap = new BinaryHeap();
     std::string readConsole;
     backTyped = false;
@@ -44,13 +44,13 @@ void BinaryHeapItem::processInput()
         else if (readConsole == "back") backTyped = true;
         else std::cout << "Nieznane polecenie!" << std::endl;
     }
-	//Po wyjœciu z pêtli dealokujemy kopiec.
+    //Po wyjœciu z pêtli dealokujemy kopiec.
     delete heap;
 }
 
 void BinaryHeapItem::loadFile()
 {
-	//Standardowe wczytywanie z pliku.
+    //Standardowe wczytywanie z pliku.
     std::string fileName;
     int count, element;
     std::cout << "\nPodaj nazwe pliku: ";
@@ -75,7 +75,7 @@ void BinaryHeapItem::loadFile()
 
 void BinaryHeapItem::deleteItem()
 {
-	//Usuwanie korzenia.
+    //Usuwanie korzenia.
     try
     {
         heap->pop();
@@ -89,7 +89,7 @@ void BinaryHeapItem::deleteItem()
 
 void BinaryHeapItem::addItem()
 {
-	//Dodawanie elementu do kopca.
+    //Dodawanie elementu do kopca.
     int element;
     std::cout << "\nPodaj wartosc elementu do dodania: ";
     std::cin >> element;
@@ -99,7 +99,7 @@ void BinaryHeapItem::addItem()
 
 void BinaryHeapItem::findItem()
 {
-	//Wyszukiwanie elementu w kopcu.
+    //Wyszukiwanie elementu w kopcu.
     int element;
     std::cout << "\nPodaj wartosc elementu: ";
     std::cin >> element;
@@ -110,7 +110,7 @@ void BinaryHeapItem::findItem()
 
 void BinaryHeapItem::createRandom()
 {
-	//Dealokujemy tablicê i alokujemy pamiêæ na nowy obiekt.
+    //Dealokujemy tablicê i alokujemy pamiêæ na nowy obiekt.
     delete heap;
     heap = new BinaryHeap();
     int size;
@@ -122,18 +122,18 @@ void BinaryHeapItem::createRandom()
 
 void BinaryHeapItem::display()
 {
-	//Wyœwietlamy wizualizacjê drzewa.
-	std::cout << std::endl;
+    //Wyœwietlamy wizualizacjê drzewa.
+    std::cout << std::endl;
     heap->printTree();
 }
 
 void BinaryHeapItem::test()
 {
-	//Tworzymy obiekt klasy testu kopca i uruchamiamy metody.
+    //Tworzymy obiekt klasy testu kopca i uruchamiamy metody.
     auto * test = new BinaryHeapTest();
     test->addTestAverage();
     test->removeTestAverage();
     test->findTestAverage();
-	//Usuwamy obiekt z zaalokowanym, osobnym kopcem.
+    //Usuwamy obiekt z zaalokowanym, osobnym kopcem.
     delete test;
 }

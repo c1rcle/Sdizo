@@ -5,7 +5,7 @@ Menu::Menu() = default;
 
 Menu::~Menu()
 {
-	//Usuwamy ka¿dy element menu.
+    //Usuwamy ka¿dy element menu.
     for (auto item : items)
     {
         delete item;
@@ -14,14 +14,14 @@ Menu::~Menu()
 
 void Menu::addMenuItem(MenuItem *item)
 {
-	//Dodajemy submenu.
+    //Dodajemy submenu.
     items.push_back(item);
 }
 
 void Menu::printMenu()
 {
-	//Dla ka¿dego submenu (w kolejnoœci dodania) wyœwietlamy jego opis.
-	std::cout << std::endl;
+    //Dla ka¿dego submenu (w kolejnoœci dodania) wyœwietlamy jego opis.
+    std::cout << std::endl;
     std::cout << "Menu aplikacji" << std::endl;
     int i = 1;
     for (MenuItem * item : items)
@@ -35,8 +35,8 @@ void Menu::printMenu()
 
 void Menu::processInput()
 {
-	//Wczytujemy dane z konsoli do 'readConsole' i wykonujemy funkcjê 'processInput()'
-	//dla elementu menu, którego komenda zgadza siê z podan¹.
+    //Wczytujemy dane z konsoli do 'readConsole' i wykonujemy funkcjê 'processInput()'
+    //dla elementu menu, którego komenda zgadza siê z podan¹.
     std::string readConsole;
     quitTyped = false;
     while (!quitTyped)
@@ -44,7 +44,7 @@ void Menu::processInput()
         printMenu();
         std::cin >> readConsole;
         unknownInput = true;
-		//Jeœli komenda to 'quit' ustawiamy flagi aby umo¿liwiæ wyjœcie z pêtli obs³ugi.
+        //Jeœli komenda to 'quit' ustawiamy flagi aby umo¿liwiæ wyjœcie z pêtli obs³ugi.
         if (readConsole == "quit")
         {
             quitTyped = true;
@@ -62,4 +62,3 @@ void Menu::processInput()
         if (unknownInput) std::cout << "Nieznane polecenie!" << std::endl;
     }
 }
-

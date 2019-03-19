@@ -11,7 +11,7 @@ ArrayItem::ArrayItem()
 void ArrayItem::printMenu()
 {
     //Wypisane menu dla tablicy.
-	std::cout << std::endl;
+    std::cout << std::endl;
     std::cout << "Menu dla tablicy" << std::endl;
     std::cout << "1. Wczytaj z pliku (load)" << std::endl;
     std::cout << "2. Usun (delete)" << std::endl;
@@ -135,7 +135,7 @@ void ArrayItem::createRandom()
 
 void ArrayItem::display()
 {
-	//Wyświetlamy zawartość tablicy.
+    //Wyświetlamy zawartość tablicy.
     std::cout << "\nZawartosc tablicy: ";
     for (int i = 0; i < array->getSize(); i++) std::cout << array->get(i) << " ";
     std::cout << std::endl;
@@ -143,11 +143,11 @@ void ArrayItem::display()
 
 void ArrayItem::test()
 {
-	//Tworzymy obiekt klasy testu tablicy i uruchamiamy metody.
+    //Tworzymy obiekt klasy testu tablicy i uruchamiamy metody.
     auto * test = new ArrayTest();
     test->addTestAverage();
     test->removeTestAverage();
     test->findTestAverage();
-	//Usuwamy obiekt z zaalokowaną, osobną tablicą.
+    //Usuwamy obiekt z zaalokowaną, osobną tablicą.
     delete test;
 }

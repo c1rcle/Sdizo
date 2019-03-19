@@ -3,15 +3,15 @@
 
 ListItem::ListItem()
 {
-	//Ustawaimy zmienne definiuj¹ce opis submenu.
+    //Ustawiamy zmienne definiuj¹ce opis submenu.
     menuDescription = "Lista (list)";
     menuCommand = "list";
 }
 
 void ListItem::printMenu()
 {
-	//Wypisanie menu dla listy.
-	std::cout << std::endl;
+    //Wypisanie menu dla listy.
+    std::cout << std::endl;
     std::cout << "Menu dla listy" << std::endl;
     std::cout << "1. Wczytaj z pliku (load)" << std::endl;
     std::cout << "2. Usun (delete)" << std::endl;
@@ -26,7 +26,7 @@ void ListItem::printMenu()
 
 void ListItem::processInput()
 {
-	//Tworzymy nowy obiekt klasy listy i wchodzimy do pêtli obs³ugi opcji.
+    //Tworzymy nowy obiekt klasy listy i wchodzimy do pêtli obs³ugi opcji.
     list = new List();
     std::string readConsole;
     backTyped = false;
@@ -44,13 +44,13 @@ void ListItem::processInput()
         else if (readConsole == "back") backTyped = true;
         else std::cout << "Nieznane polecenie!" << std::endl;
     }
-	//Po wyjœciu z pêtli dealokujemy listê.
+    //Po wyjœciu z pêtli dealokujemy listê.
     delete list;
 }
 
 void ListItem::loadFile()
 {
-	//Standardowe wczytywanie z pliku.
+    //Standardowe wczytywanie z pliku.
     std::string fileName;
     int count, element;
     std::cout << "\nPodaj nazwe pliku: ";
@@ -75,18 +75,18 @@ void ListItem::loadFile()
 
 void ListItem::deleteItem()
 {
-	//Usuwanie elementu dla danej wartoœci.
+    //Usuwanie elementu dla danej wartoœci.
     int element;
     std::cout << "\nPodaj wartosc elementu do usuniecia: ";
     std::cin >> element;
-    if(!list->removeValue(element))
+    if (!list->removeValue(element))
         std::cout << "Nie znaleziono takiego elementu!" << std::endl;
     display();
 }
 
 void ListItem::addItem()
 {
-	//Dodawanie elementu dla danego indeksu.
+    //Dodawanie elementu dla danego indeksu.
     int index;
     int element;
     std::cout << "\nPodaj index elementu do dodania: ";
@@ -107,7 +107,7 @@ void ListItem::addItem()
 
 void ListItem::findItem()
 {
-	//Wyszukiwanie elementu.
+    //Wyszukiwanie elementu.
     int element;
     std::cout << "\nPodaj wartosc elementu: ";
     std::cin >> element;
@@ -118,7 +118,7 @@ void ListItem::findItem()
 
 void ListItem::createRandom()
 {
-	//Dealokujemy listê i rezerwujemy pamiêæ na nowy obiekt.
+    //Dealokujemy listê i rezerwujemy pamiêæ na nowy obiekt.
     delete list;
     list = new List();
     int size;
@@ -130,7 +130,7 @@ void ListItem::createRandom()
 
 void ListItem::display()
 {
-	//Wyœwietlamy zawartoœæ listy.
+    //Wyœwietlamy zawartoœæ listy.
     std::cout << "\nZawartosc listy: ";
     for (int i = 0; i < list->getSize(); i++) std::cout << list->get(i) << " ";
     std::cout << std::endl;
@@ -138,11 +138,11 @@ void ListItem::display()
 
 void ListItem::test()
 {
-	//Tworzymy obiekt klasy testu listy i uruchamiamy metody.
+    //Tworzymy obiekt klasy testu listy i uruchamiamy metody.
     auto * test = new ListTest();
     test->addTestAverage();
     test->removeTestAverage();
     test->findTestAverage();
-	//Usuwamy obiekt z zaalokowan¹, osobn¹ list¹.
+    //Usuwamy obiekt z zaalokowan¹, osobn¹ list¹.
     delete test;
 }

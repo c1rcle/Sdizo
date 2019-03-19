@@ -12,16 +12,16 @@ ArrayTest::~ArrayTest()
 
 void ArrayTest::populateArray(int size)
 {
-	//Dealokujemy tablicę i przydzielamy pamięć dla nowego obiektu.
+    //Dealokujemy tablicę i przydzielamy pamięć dla nowego obiektu.
     delete array;
     array = new Array();
-	//Dodajemy 'size' liczb z przedziału [0, size - 1].
+    //Dodajemy 'size' liczb z przedziału [0, size - 1].
     for (int i = 0; i < size; i++) array->add(rand() % size);
 }
 
 void ArrayTest::addTestAverage()
 {
-	//Testy dodawania elementów z przodu tablicy.
+    //Testy dodawania elementów z przodu tablicy.
     double results[3][5];
     results[0][0] = addFrontTest(1000);
     results[0][1] = addFrontTest(2000);
@@ -29,14 +29,14 @@ void ArrayTest::addTestAverage()
     results[0][3] = addFrontTest(10000);
     results[0][4] = addFrontTest(20000);
 
-	//Testy dodawania elementów z tyłu tablicy.
+    //Testy dodawania elementów z tyłu tablicy.
     results[1][0] = addBackTest(1000);
     results[1][1] = addBackTest(2000);
     results[1][2] = addBackTest(5000);
     results[1][3] = addBackTest(10000);
     results[1][4] = addBackTest(20000);
 
-	//Testy dodawania elementów w losowym miejscu tablicy.
+    //Testy dodawania elementów w losowym miejscu tablicy.
     results[2][0] = addRandomTest(1000);
     results[2][1] = addRandomTest(2000);
     results[2][2] = addRandomTest(5000);
@@ -53,7 +53,7 @@ void ArrayTest::addTestAverage()
 
 void ArrayTest::removeTestAverage()
 {
-	//Testy usuwania elementów z przodu tablicy.
+    //Testy usuwania elementów z przodu tablicy.
     double results[3][5];
     results[0][0] = removeFrontTest(1000);
     results[0][1] = removeFrontTest(2000);
@@ -61,14 +61,14 @@ void ArrayTest::removeTestAverage()
     results[0][3] = removeFrontTest(10000);
     results[0][4] = removeFrontTest(20000);
 
-	//Testy usuwania elementów z tyłu tablicy.
+    //Testy usuwania elementów z tyłu tablicy.
     results[1][0] = removeBackTest(1000);
     results[1][1] = removeBackTest(2000);
     results[1][2] = removeBackTest(5000);
     results[1][3] = removeBackTest(10000);
     results[1][4] = removeBackTest(20000);
 
-	//Testy usuwania elementów z losowego miejsca tablicy.
+    //Testy usuwania elementów z losowego miejsca tablicy.
     results[2][0] = removeRandomTest(1000);
     results[2][1] = removeRandomTest(2000);
     results[2][2] = removeRandomTest(5000);
@@ -85,7 +85,7 @@ void ArrayTest::removeTestAverage()
 
 void ArrayTest::findTestAverage()
 {
-	//Testy wyszukiwania elementów dla różnych rozmiarów struktury.
+    //Testy wyszukiwania elementów dla różnych rozmiarów struktury.
     double results[5];
     results[0] = findTest(1000);
     results[1] = findTest(2000);
@@ -102,7 +102,7 @@ void ArrayTest::findTestAverage()
 
 double ArrayTest::addFrontTest(int size)
 {
-	//Wynik to średnia ze 100 dodań ze zmienionym za każdym razem datasetem.
+    //Wynik to średnia ze 100 dodań ze zmienionym za każdym razem datasetem.
     double average = 0;
     for (int i = 0; i < 100; i++)
     {
@@ -118,7 +118,7 @@ double ArrayTest::addFrontTest(int size)
 
 double ArrayTest::addBackTest(int size)
 {
-	//Wynik to średnia ze 100 dodań ze zmienionym za każdym razem datasetem.
+    //Wynik to średnia ze 100 dodań ze zmienionym za każdym razem datasetem.
     double average = 0;
     for (int i = 0; i < 100; i++)
     {
@@ -134,7 +134,7 @@ double ArrayTest::addBackTest(int size)
 
 double ArrayTest::addRandomTest(int size)
 {
-	//Wynik to średnia ze 100 dodań ze zmienionym za każdym razem datasetem.
+    //Wynik to średnia ze 100 dodań ze zmienionym za każdym razem datasetem.
     double average = 0;
     for (int i = 0; i < 100; i++)
     {
@@ -150,7 +150,7 @@ double ArrayTest::addRandomTest(int size)
 
 double ArrayTest::removeFrontTest(int size)
 {
-	//Wynik to średnia ze 100 usunięć ze zmienionym za każdym razem datasetem.
+    //Wynik to średnia ze 100 usunięć ze zmienionym za każdym razem datasetem.
     double average = 0;
     for (int i = 0; i < 100; i++)
     {
@@ -165,7 +165,7 @@ double ArrayTest::removeFrontTest(int size)
 
 double ArrayTest::removeBackTest(int size)
 {
-	//Wynik to średnia ze 100 usunięć ze zmienionym za każdym razem datasetem.
+    //Wynik to średnia ze 100 usunięć ze zmienionym za każdym razem datasetem.
     double average = 0;
     for (int i = 0; i < 100; i++)
     {
@@ -181,7 +181,7 @@ double ArrayTest::removeBackTest(int size)
 
 double ArrayTest::removeRandomTest(int size)
 {
-	//Wynik to średnia ze 100 usunięć ze zmienionym za każdym razem datasetem.
+    //Wynik to średnia ze 100 usunięć ze zmienionym za każdym razem datasetem.
     double average = 0;
     for (int i = 0; i < 100; i++)
     {
@@ -196,7 +196,7 @@ double ArrayTest::removeRandomTest(int size)
 
 double ArrayTest::findTest(int size)
 {
-	//Wynik to średnia ze 100 wyszukań ze zmienionym za każdym razem datasetem.
+    //Wynik to średnia ze 100 wyszukań ze zmienionym za każdym razem datasetem.
     double average = 0;
     for (int i = 0; i < 100; i++)
     {

@@ -12,16 +12,16 @@ BinaryHeapTest::~BinaryHeapTest()
 
 void BinaryHeapTest::populateHeap(int size)
 {
-	//Dealokujemy kopiec i przydzielamy pamięć dla nowego obiektu.
+    //Dealokujemy kopiec i przydzielamy pamięć dla nowego obiektu.
     delete heap;
     heap = new BinaryHeap();
-	//Wypełniamy kopiec 'size' liczbami z przedziału [0, size - 1] 
+    //Wypełniamy kopiec 'size' liczbami z przedziału [0, size - 1] 
     for (int i = 0; i < size; i++) heap->push(rand() % size);
 }
 
 void BinaryHeapTest::addTestAverage()
 {
-	//Testy dodawania elementów dla różnych wielkości struktury.
+    //Testy dodawania elementów dla różnych wielkości struktury.
     double results[5];
     results[0] = pushTest(1000);
     results[1] = pushTest(2000);
@@ -38,7 +38,7 @@ void BinaryHeapTest::addTestAverage()
 
 void BinaryHeapTest::removeTestAverage()
 {
-	//Testy usuwania elementów dla różnych wielkości struktury.
+    //Testy usuwania elementów dla różnych wielkości struktury.
     double results[5];
     results[0] = popTest(1000);
     results[1] = popTest(2000);
@@ -55,7 +55,7 @@ void BinaryHeapTest::removeTestAverage()
 
 void BinaryHeapTest::findTestAverage()
 {
-	//Testy wyszukiwania elementów dla różnych wielkości struktury.
+    //Testy wyszukiwania elementów dla różnych wielkości struktury.
     double results[5];
     results[0] = findTest(1000);
     results[1] = findTest(2000);
@@ -72,7 +72,7 @@ void BinaryHeapTest::findTestAverage()
 
 double BinaryHeapTest::pushTest(int size)
 {
-	//Wynik to średnia ze 100 dodań ze zmienionym za każdym razem datasetem.
+    //Wynik to średnia ze 100 dodań ze zmienionym za każdym razem datasetem.
     double average = 0;
     for (int i = 0; i < 100; i++)
     {
@@ -88,7 +88,7 @@ double BinaryHeapTest::pushTest(int size)
 
 double BinaryHeapTest::popTest(int size)
 {
-	//Wynik to średnia ze 100 usunięć ze zmienionym za każdym razem datasetem.
+    //Wynik to średnia ze 100 usunięć ze zmienionym za każdym razem datasetem.
     double average = 0;
     for (int i = 0; i < 100; i++)
     {
@@ -104,15 +104,15 @@ double BinaryHeapTest::popTest(int size)
 double BinaryHeapTest::findTest(int size)
 {
 	//Wynik to średnia ze 100 wyszukań ze zmienionym za każdym razem datasetem.
-    double average = 0;
-    for (int i = 0; i < 100; i++)
-    {
-        populateHeap(size);
-        int element = heap->getElement(rand() % heap->getCount());
-        measurement.startTimer();
-        heap->find(element);
-        measurement.stopTimer();
-        average += measurement.getDuration();
-    }
-    return average / 100;
+	double average = 0;
+	for (int i = 0; i < 100; i++)
+	{
+		populateHeap(size);
+		int element = heap->getElement(rand() % heap->getCount());
+		measurement.startTimer();
+		heap->find(element);
+		measurement.stopTimer();
+		average += measurement.getDuration();
+	}
+	return average / 100;
 }

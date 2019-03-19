@@ -7,13 +7,13 @@ Measurement::Measurement()
 
 void Measurement::startTimer()
 {
-	//Ustawiamy pocz¹tkowy czas wykonywania.
+    //Ustawiamy pocz¹tkowy czas wykonywania.
     startTime = std::chrono::high_resolution_clock::now();
 }
 
 void Measurement::stopTimer()
 {
-	//Ustawiamy koñcowy czas wykonywania i zapisujemy ró¿nicê do 'duration'.
+    //Ustawiamy koñcowy czas wykonywania i zapisujemy ró¿nicê do 'duration'.
     endTime = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double, std::micro> time = endTime - startTime;
     duration = time.count();
