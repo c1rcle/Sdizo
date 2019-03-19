@@ -3,7 +3,7 @@
 
 BinaryHeapItem::BinaryHeapItem()
 {
-    //Ustawiamy zmienne definiuj¹ce opis submenu.
+    //Ustawiamy zmienne definiujÄ…ce opis submenu.
     menuDescription = "Kopiec binarny (heap)";
     menuCommand = "heap";
 }
@@ -26,7 +26,7 @@ void BinaryHeapItem::printMenu()
 
 void BinaryHeapItem::processInput()
 {
-    //Tworzymy nowy obiekt klasy kopca i wchodzimy do pêtli obs³ugi opcji.
+    //Tworzymy nowy obiekt klasy kopca i wchodzimy do pÄ™tli obsÅ‚ugi opcji.
     heap = new BinaryHeap();
     std::string readConsole;
     backTyped = false;
@@ -44,7 +44,7 @@ void BinaryHeapItem::processInput()
         else if (readConsole == "back") backTyped = true;
         else std::cout << "Nieznane polecenie!" << std::endl;
     }
-    //Po wyjœciu z pêtli dealokujemy kopiec.
+    //Po wyjÅ›ciu z pÄ™tli dealokujemy kopiec.
     delete heap;
 }
 
@@ -110,7 +110,7 @@ void BinaryHeapItem::findItem()
 
 void BinaryHeapItem::createRandom()
 {
-    //Dealokujemy tablicê i alokujemy pamiêæ na nowy obiekt.
+    //Dealokujemy tablicÄ™ i alokujemy pamiÄ™Ä‡ na nowy obiekt.
     delete heap;
     heap = new BinaryHeap();
     int size;
@@ -122,7 +122,7 @@ void BinaryHeapItem::createRandom()
 
 void BinaryHeapItem::display()
 {
-    //Wyœwietlamy wizualizacjê drzewa.
+    //WyÅ›wietlamy wizualizacjÄ™ drzewa.
     std::cout << std::endl;
     heap->printTree();
 }

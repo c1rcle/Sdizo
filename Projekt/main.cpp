@@ -4,7 +4,7 @@
 
 int main()
 {
-    //Mo¿liwoœæ wyœwietlania znaków UTF-8 w konsoli Windows.
+    //MoÅ¼liwoÅ›Ä‡ wyÅ›wietlania znakÃ³w UTF-8 w konsoli Windows.
     std::system("@chcp 65001 >nul");
     std::srand(std::time(nullptr));
     auto * menu = new Menu();

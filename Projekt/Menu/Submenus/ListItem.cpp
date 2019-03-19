@@ -3,7 +3,7 @@
 
 ListItem::ListItem()
 {
-    //Ustawiamy zmienne definiuj¹ce opis submenu.
+    //Ustawiamy zmienne definiujÄ…ce opis submenu.
     menuDescription = "Lista (list)";
     menuCommand = "list";
 }
@@ -26,7 +26,7 @@ void ListItem::printMenu()
 
 void ListItem::processInput()
 {
-    //Tworzymy nowy obiekt klasy listy i wchodzimy do pêtli obs³ugi opcji.
+    //Tworzymy nowy obiekt klasy listy i wchodzimy do pÄ™tli obsÅ‚ugi opcji.
     list = new List();
     std::string readConsole;
     backTyped = false;
@@ -44,7 +44,7 @@ void ListItem::processInput()
         else if (readConsole == "back") backTyped = true;
         else std::cout << "Nieznane polecenie!" << std::endl;
     }
-    //Po wyjœciu z pêtli dealokujemy listê.
+    //Po wyjÅ›ciu z pÄ™tli dealokujemy listÄ™.
     delete list;
 }
 
@@ -75,7 +75,7 @@ void ListItem::loadFile()
 
 void ListItem::deleteItem()
 {
-    //Usuwanie elementu dla danej wartoœci.
+    //Usuwanie elementu dla danej wartoÅ›ci.
     int element;
     std::cout << "\nPodaj wartosc elementu do usuniecia: ";
     std::cin >> element;
@@ -118,7 +118,7 @@ void ListItem::findItem()
 
 void ListItem::createRandom()
 {
-    //Dealokujemy listê i rezerwujemy pamiêæ na nowy obiekt.
+    //Dealokujemy listÄ™ i rezerwujemy pamiÄ™Ä‡ na nowy obiekt.
     delete list;
     list = new List();
     int size;
@@ -130,7 +130,7 @@ void ListItem::createRandom()
 
 void ListItem::display()
 {
-    //Wyœwietlamy zawartoœæ listy.
+    //WyÅ›wietlamy zawartoÅ›Ä‡ listy.
     std::cout << "\nZawartosc listy: ";
     for (int i = 0; i < list->getSize(); i++) std::cout << list->get(i) << " ";
     std::cout << std::endl;
@@ -143,6 +143,6 @@ void ListItem::test()
     test->addTestAverage();
     test->removeTestAverage();
     test->findTestAverage();
-    //Usuwamy obiekt z zaalokowan¹, osobn¹ list¹.
+    //Usuwamy obiekt z zaalokowanÄ…, osobnÄ… listÄ….
     delete test;
 }

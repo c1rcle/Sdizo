@@ -1,11 +1,11 @@
 #include "Menu.h"
 
-//Klasie menu wystarczy domyúlny konstruktor.
+//Klasie menu wystarczy domy≈õlny konstruktor.
 Menu::Menu() = default;
 
 Menu::~Menu()
 {
-    //Usuwamy kaødy element menu.
+    //Usuwamy ka≈ºdy element menu.
     for (auto item : items)
     {
         delete item;
@@ -20,7 +20,7 @@ void Menu::addMenuItem(MenuItem *item)
 
 void Menu::printMenu()
 {
-    //Dla kaødego submenu (w kolejnoúci dodania) wyúwietlamy jego opis.
+    //Dla ka≈ºdego submenu (w kolejno≈õci dodania) wy≈õwietlamy jego opis.
     std::cout << std::endl;
     std::cout << "Menu aplikacji" << std::endl;
     int i = 1;
@@ -35,8 +35,8 @@ void Menu::printMenu()
 
 void Menu::processInput()
 {
-    //Wczytujemy dane z konsoli do 'readConsole' i wykonujemy funkcjÍ 'processInput()'
-    //dla elementu menu, ktÛrego komenda zgadza siÍ z podanπ.
+    //Wczytujemy dane z konsoli do 'readConsole' i wykonujemy funkcjƒô 'processInput()'
+    //dla elementu menu, kt√≥rego komenda zgadza siƒô z podanƒÖ.
     std::string readConsole;
     quitTyped = false;
     while (!quitTyped)
@@ -44,7 +44,7 @@ void Menu::processInput()
         printMenu();
         std::cin >> readConsole;
         unknownInput = true;
-        //Jeúli komenda to 'quit' ustawiamy flagi aby umoøliwiÊ wyjúcie z pÍtli obs≥ugi.
+        //Je≈õli komenda to 'quit' ustawiamy flagi aby umo≈ºliwiƒá wyj≈õcie z pƒôtli obs≈Çugi.
         if (readConsole == "quit")
         {
             quitTyped = true;
