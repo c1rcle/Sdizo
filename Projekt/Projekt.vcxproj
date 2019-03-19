@@ -19,9 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <None Include=".gitignore" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Array\Array.cpp" />
     <ClCompile Include="Heap\BinaryHeap.cpp" />
     <ClCompile Include="List\List.cpp" />
