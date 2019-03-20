@@ -26,7 +26,7 @@ void BinaryHeap::push(int element)
         int * tempArray = new int[vertices];
         copyArray(base, tempArray, vertices - 1);
         delete[] base;
-        size += MIN_FREE_SPACE;
+        size += START_SPACE;
         base = new int[size];
         copyArray(tempArray, base, vertices - 1);
         delete[] tempArray;
@@ -56,7 +56,7 @@ int BinaryHeap::pop()
         int * tempArray = new int[vertices];
         copyArray(base, tempArray, vertices);
         delete[] base;
-        size -= MIN_FREE_SPACE;
+        size -= START_SPACE;
         base = new int[size];
         copyArray(tempArray, base, vertices);
         delete[] tempArray;

@@ -4,6 +4,7 @@
 #include "Submenus/ArrayItem.h"
 #include "Submenus/BinaryHeapItem.h"
 #include "Submenus/ListItem.h"
+#include "Submenus/TreeItem.h"
 
 /// Klasa dla głównego menu programu.
 class Menu

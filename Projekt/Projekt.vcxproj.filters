@@ -67,6 +67,18 @@
     <Filter Include="Header Files\Test\ListTest">
       <UniqueIdentifier>{f907acc8-96b1-4991-8b6e-63a5f15faed9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Tree">
+      <UniqueIdentifier>{23ad348a-ded6-454c-a578-dbc97c8b80bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tree">
+      <UniqueIdentifier>{6fad3a78-79db-4b81-a1fc-43b4163862c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Test\TreeTest">
+      <UniqueIdentifier>{4477c2ab-98b0-47f2-ac1a-873350f7dc70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Test\TreeTest">
+      <UniqueIdentifier>{0a11194b-53b4-4681-b49e-50b8a3e11579}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -104,6 +116,15 @@
     </ClCompile>
     <ClCompile Include="Test\Measurement.cpp">
       <Filter>Source Files\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree\BST.cpp">
+      <Filter>Source Files\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu\Submenus\TreeItem.cpp">
+      <Filter>Source Files\Menu\Submenus</Filter>
+    </ClCompile>
+    <ClCompile Include="Test\TreeTest\BSTTest.cpp">
+      <Filter>Source Files\Test\TreeTest</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +166,18 @@
     </ClInclude>
     <ClInclude Include="Test\Measurement.h">
       <Filter>Header Files\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree\BST.h">
+      <Filter>Header Files\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree\BSTNode.h">
+      <Filter>Header Files\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu\Submenus\TreeItem.h">
+      <Filter>Header Files\Menu\Submenus</Filter>
+    </ClInclude>
+    <ClInclude Include="Test\TreeTest\BSTTest.h">
+      <Filter>Header Files\Test\TreeTest</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

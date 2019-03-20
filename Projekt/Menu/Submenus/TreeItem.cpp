@@ -1,18 +1,18 @@
-#include "BinaryHeapItem.h"
-#include "../../Test/HeapTest/BinaryHeapTest.h"
+#include "TreeItem.h"
+#include "../../Test/TreeTest/BSTTest.h"
 
-BinaryHeapItem::BinaryHeapItem()
+TreeItem::TreeItem()
 {
-    //Ustawiamy zmienne definiujÄ…ce opis submenu.
-    menuDescription = "Kopiec binarny (heap)";
-    menuCommand = "heap";
+    //Ustawiamy zmienne definiuj¹ce opis submenu.
+    menuDescription = "Drzewo BST (tree)";
+    menuCommand = "tree";
 }
 
-void BinaryHeapItem::printMenu()
+void TreeItem::printMenu()
 {
     //Wypisanie menu dla kopca.
     std::cout << std::endl;
-    std::cout << "Menu dla kopca binarnego" << std::endl;
+    std::cout << "Menu dla drzewa BST" << std::endl;
     std::cout << "1. Wczytaj z pliku (load)" << std::endl;
     std::cout << "2. Usun (delete)" << std::endl;
     std::cout << "3. Dodaj (add)" << std::endl;
@@ -24,10 +24,10 @@ void BinaryHeapItem::printMenu()
     std::cout << "Wybierz opcje: ";
 }
 
-void BinaryHeapItem::processInput()
+void TreeItem::processInput()
 {
-    //Tworzymy nowy obiekt klasy kopca i wchodzimy do pÄ™tli obsÅ‚ugi opcji.
-    heap = new BinaryHeap();
+    //Tworzymy nowy obiekt klasy drzewa i wchodzimy do pêtli obs³ugi opcji.
+    tree = new BST();
     std::string readConsole;
     backTyped = false;
     while (!backTyped)
@@ -44,11 +44,11 @@ void BinaryHeapItem::processInput()
         else if (readConsole == "back") backTyped = true;
         else std::cout << "Nieznane polecenie!" << std::endl;
     }
-    //Po wyjÅ›ciu z pÄ™tli dealokujemy kopiec.
-    delete heap;
+    //Po wyjœciu z pêtli dealokujemy drzewo.
+    delete tree;
 }
 
-void BinaryHeapItem::loadFile()
+void TreeItem::loadFile()
 {
     //Standardowe wczytywanie z pliku.
     std::string fileName;
@@ -59,13 +59,13 @@ void BinaryHeapItem::loadFile()
     file.open(fileName);
     if (file.is_open())
     {
-        delete heap;
-        heap = new BinaryHeap();
+        delete tree;
+        tree = new BST();
         file >> count;
         for (int i = 0; i < count; i++)
         {
             file >> element;
-            heap->push(element);
+            tree->add(element);
         }
         display();
     }
@@ -73,67 +73,70 @@ void BinaryHeapItem::loadFile()
     file.close();
 }
 
-void BinaryHeapItem::deleteItem()
+void TreeItem::deleteItem()
 {
-    //Usuwanie korzenia.
+    //Usuwanie dowolnego elementu.
+    int element;
+    std::cout << "\nPodaj wartosc elementu do dodania: ";
+    std::cin >> element;
     try
     {
-        heap->pop();
+        tree->remove(element);
         display();
     }
-    catch (std::length_error& e)
+    catch (std::invalid_argument& e)
     {
         std::cout << e.what() << std::endl;
     }
 }
 
-void BinaryHeapItem::addItem()
+void TreeItem::addItem()
 {
-    //Dodawanie elementu do kopca.
+    //Dodawanie elementu do drzewa.
     int element;
     std::cout << "\nPodaj wartosc elementu do dodania: ";
     std::cin >> element;
-    heap->push(element);
+    tree->add(element);
     display();
 }
 
-void BinaryHeapItem::findItem()
+void TreeItem::findItem()
 {
-    //Wyszukiwanie elementu w kopcu.
+    //Wyszukiwanie elementu w drzewie.
     int element;
     std::cout << "\nPodaj wartosc elementu: ";
     std::cin >> element;
-    if (heap->find(element)) std::cout << "Znaleziono element o takiej wartosci!" << std::endl;
+    if (tree->find(element)) std::cout << "Znaleziono element o takiej wartosci!" << std::endl;
     else std::cout << "Nie znaleziono elementu o takiej wartosci!" << std::endl;
     display();
 }
 
-void BinaryHeapItem::createRandom()
+void TreeItem::createRandom()
 {
-    //Dealokujemy kopiec i alokujemy pamiÄ™Ä‡ na nowy obiekt.
-    delete heap;
-    heap = new BinaryHeap();
+    //Dealokujemy drzewo i alokujemy pamiêæ na nowy obiekt.
+    delete tree;
+    tree = new BST();
     int size;
-    std::cout << "\nPodaj wielkosc kopca: ";
+    std::cout << "\nPodaj wielkosc drzewa: ";
     std::cin >> size;
-    for (int i = 0; i < size; i++) heap->push(rand() % 50 + 1);
+    for (int i = 0; i < size; i++) tree->add(rand() % 50 + 1);
     display();
 }
 
-void BinaryHeapItem::display()
+void TreeItem::display()
 {
-    //WyÅ›wietlamy wizualizacjÄ™ drzewa.
+    //Wyœwietlamy wizualizacjê drzewa.
     std::cout << std::endl;
-    heap->printTree();
+    tree->printTree();
 }
 
-void BinaryHeapItem::test()
+void TreeItem::test()
 {
-    //Tworzymy obiekt klasy testu kopca i uruchamiamy metody.
-    auto * test = new BinaryHeapTest();
+    //Tworzymy obiekt klasy testu drzewa i uruchamiamy metody.
+    auto * test = new BSTTest();
     test->addTestAverage();
     test->removeTestAverage();
     test->findTestAverage();
-    //Usuwamy obiekt z zaalokowanym, osobnym kopcem.
+    //Usuwamy obiekt z zaalokowanym, osobnym drzewem.
     delete test;
 }

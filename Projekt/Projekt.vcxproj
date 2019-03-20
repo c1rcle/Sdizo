@@ -27,10 +27,13 @@
     <ClCompile Include="Menu\Submenus\ArrayItem.cpp" />
     <ClCompile Include="Menu\Submenus\BinaryHeapItem.cpp" />
     <ClCompile Include="Menu\Submenus\ListItem.cpp" />
+    <ClCompile Include="Menu\Submenus\TreeItem.cpp" />
     <ClCompile Include="Test\ArrayTest\ArrayTest.cpp" />
     <ClCompile Include="Test\HeapTest\BinaryHeapTest.cpp" />
     <ClCompile Include="Test\ListTest\ListTest.cpp" />
     <ClCompile Include="Test\Measurement.cpp" />
+    <ClCompile Include="Test\TreeTest\BSTTest.cpp" />
+    <ClCompile Include="Tree\BST.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Array\Array.h" />
@@ -42,10 +45,14 @@
     <ClInclude Include="Menu\Submenus\ArrayItem.h" />
     <ClInclude Include="Menu\Submenus\BinaryHeapItem.h" />
     <ClInclude Include="Menu\Submenus\ListItem.h" />
+    <ClInclude Include="Menu\Submenus\TreeItem.h" />
     <ClInclude Include="Test\ArrayTest\ArrayTest.h" />
     <ClInclude Include="Test\HeapTest\BinaryHeapTest.h" />
     <ClInclude Include="Test\ListTest\ListTest.h" />
     <ClInclude Include="Test\Measurement.h" />
+    <ClInclude Include="Test\TreeTest\BSTTest.h" />
+    <ClInclude Include="Tree\BST.h" />
+    <ClInclude Include="Tree\BSTNode.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -113,13 +120,14 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

@@ -12,7 +12,7 @@ private:
     /// Stała przechowująca minimalną ilość wolnego miejsca w kopcu.
     unsigned const int MIN_FREE_SPACE = 5;
     /// Stała przechowująca maksymalną ilość wolnego miejsca w kopcu.
-    unsigned const int MAX_FREE_SPACE = 10;
+    unsigned const int MAX_FREE_SPACE = 15;
     /// Stała przechowująca opis wyjątku.
     const std::string EXCEPTION_DESC = "Nieprawidlowy index!";
     /// Stała przechowująca opis wyjątku.
