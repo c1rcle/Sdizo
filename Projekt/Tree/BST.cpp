@@ -51,10 +51,14 @@ void BST::remove(int element)
     if (removeNode->left == nullptr && removeNode->right == nullptr)
     {
         //W tym przypadku wierzchołek zostaje po prostu usunięty.
-        BSTNode * parent = removeNode->parent;
-        //Ustawiamy wskazanie rodzica na ten wierzchołek na nullptr.
-        if (parent->data > removeNode->data) parent->left = nullptr;
-        else parent->right = nullptr;
+        if (removeNode->parent != nullptr)
+        {
+            BSTNode * parent = removeNode->parent;
+            //Ustawiamy wskazanie rodzica na ten wierzchołek na nullptr.
+            if (parent->data > removeNode->data) parent->left = nullptr;
+            else parent->right = nullptr;
+        }
+        else root = nullptr;
         delete removeNode;
     }
     //Drugi przypadek - usuwany wierzchołek ma jedno dziecko (lewe).
@@ -82,10 +86,12 @@ void BST::remove(int element)
     {
         //Znajdujemy następnika danego węzła.
         BSTNode * successor = findSuccessor(removeNode);
-        //Zamieniamy dane i usuwamy niepotrzebne wskazania.
+        //Zamieniamy dane i przypisujemy prawe poddrzewo następnika jego rodzicowi.
         removeNode->data = successor->data;
-        if (successor->data < successor->parent->data) successor->parent->left = nullptr;
-        else successor->parent->right = nullptr;
+        BSTNode * successorRightSubtree = successor->right;
+        if (successor->data < successor->parent->data) successor->parent->left = successorRightSubtree;
+        else successor->parent->right = successorRightSubtree;
+        if (successorRightSubtree != nullptr) successorRightSubtree->parent = successor->parent;
         delete successor;
     }
 }

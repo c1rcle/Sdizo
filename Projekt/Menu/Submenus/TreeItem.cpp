@@ -77,7 +77,7 @@ void TreeItem::deleteItem()
 {
     //Usuwanie dowolnego elementu.
     int element;
-    std::cout << "\nPodaj wartosc elementu do dodania: ";
+    std::cout << "\nPodaj wartosc elementu do usuniecia: ";
     std::cin >> element;
     try
     {
