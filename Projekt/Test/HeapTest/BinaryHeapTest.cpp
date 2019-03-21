@@ -46,7 +46,7 @@ void BinaryHeapTest::removeTestAverage()
     results[3] = popTest(10000);
     results[4] = popTest(20000);
 
-    std::cout << "Usuwanie korzenia dla 1000, 2000, 5000, 10000, 20000 elementow: " << std::endl;
+    std::cout << "\nUsuwanie korzenia dla 1000, 2000, 5000, 10000, 20000 elementow: " << std::endl;
     for (double result : results)
     {
         std::cout << result << " us" << std::endl;
@@ -63,7 +63,7 @@ void BinaryHeapTest::findTestAverage()
     results[3] = findTest(10000);
     results[4] = findTest(20000);
 
-    std::cout << "Wyszukiwanie dla 1000, 2000, 5000, 10000, 20000 elementow:" << std::endl;
+    std::cout << "\nWyszukiwanie dla 1000, 2000, 5000, 10000, 20000 elementow:" << std::endl;
     for (double result : results)
     {
         std::cout << result << " us" << std::endl;

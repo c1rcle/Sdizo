@@ -57,7 +57,7 @@ void BSTTest::removeTestAverage()
     results[3] = removeTest(10000);
     results[4] = removeTest(20000);
 
-    std::cout << "Usuwanie dla 1000, 2000, 5000, 10000, 20000 elementow: " << std::endl;
+    std::cout << "\nUsuwanie dla 1000, 2000, 5000, 10000, 20000 elementow: " << std::endl;
     for (double result : results)
     {
         std::cout << result << " us" << std::endl;
@@ -74,7 +74,7 @@ void BSTTest::findTestAverage()
     results[3] = findTest(10000);
     results[4] = findTest(20000);
 
-    std::cout << "Wyszukiwanie dla 1000, 2000, 5000, 10000, 20000 elementow:" << std::endl;
+    std::cout << "\nWyszukiwanie dla 1000, 2000, 5000, 10000, 20000 elementow:" << std::endl;
     for (double result : results)
     {
         std::cout << result << " us" << std::endl;
