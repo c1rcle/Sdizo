@@ -75,16 +75,12 @@ void BinaryHeapItem::loadFile()
 
 void BinaryHeapItem::deleteItem()
 {
-    //Usuwanie korzenia.
-    try
-    {
-        heap->pop();
-        display();
-    }
-    catch (std::length_error& e)
-    {
-        std::cout << e.what() << std::endl;
-    }
+    //Usuwanie elementu.
+    int element;
+    std::cout << "\nPodaj wartosc elementu do usunięcia: ";
+    std::cin >> element;
+    if (heap->remove(element)) display();
+    else std::cout << "Nie znaleziono elementu o takiej wartosci!" << std::endl;
 }
 
 void BinaryHeapItem::addItem()

@@ -23,6 +23,18 @@ private:
     unsigned int vertices;
     /// Zmienna przechowująca ilość miejsc w tablicy.
     unsigned int size;
+    /// Naprawia strukturę kopca w górę.
+    /// \param index - indeks elementu od którego zaczynamy naprawę.
+    /// \param lastVertex - wartość ostatniego elementu kopca.
+    void fixHeapUp(int index, int lastVertex);
+    /// Naprawia strukturę kopca w dół.
+    /// \param index - indeks elementu od którego zaczynamy naprawę.
+    /// \param lastVertex - wartość ostatniego elementu kopca.
+    void fixHeapDown(int index, int lastVertex);
+    /// Znajduje indeks podanego elementu.
+    /// \param element - element do wyszukania.
+    /// \return Indeks elementu lub -1 jeśli nie zostanie odnaleziony.
+    int findElementIndex(int element);
     /// Kopiuje daną ilość elementów z tablicy źródłowej do docelowej.
     /// \param source - wskaźnik na pierwszy element tablicy źródłowej.
     /// \param destination - wskaźnik na pierwszy element tablicy docelowej.
@@ -39,6 +51,10 @@ public:
     /// Usuwa korzeń kopca i naprawia go.
     /// \return Wartość korzenia.
     int pop();
+    /// Usuwa pierwsze wystąpienie elementu w kopcu i naprawia go.
+    /// \param element - wartość elementu do wyszukania.
+    /// \return true - jeśli element został usunięty, false - jeśli nie.
+    bool remove(int element);
     /// Sprawdza czy element o podanej wartości występuje w kopcu.
     /// \param element - wartość elementu do wyszukania.
     /// \return true - jeśli element został znaleziony, false - jeśli nie.

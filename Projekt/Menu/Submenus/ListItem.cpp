@@ -130,9 +130,11 @@ void ListItem::createRandom()
 
 void ListItem::display()
 {
-    //Wyświetlamy zawartość listy.
+    //Wyświetlamy zawartość listy (przód, tył).
     std::cout << "\nZawartosc listy: ";
     for (int i = 0; i < list->getSize(); i++) std::cout << list->get(i) << " ";
+    std::cout << std::endl;
+    for (int i = list->getSize() - 1; i > -1; i--) std::cout << list->get(i) << " ";
     std::cout << std::endl;
 }
 
