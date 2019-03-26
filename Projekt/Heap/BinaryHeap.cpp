@@ -38,7 +38,6 @@ int BinaryHeap::pop()
 {
     //Jeśli kopiec jest pusty rzucamy wyjątek.
     if (vertices == 0) throw std::length_error(EXCEPTION_LENGTH_DESC);
-    vertices--;
     //Jeśli rozmiar tablicy jest większy niż maksymalny, zmniejszamy ją.
     if (size - vertices > MAX_FREE_SPACE)
     {
@@ -51,7 +50,7 @@ int BinaryHeap::pop()
         copyArray(tempArray, base, vertices);
         delete[] tempArray;
     }
-
+    vertices--;
     //Zapamiętujemy index ostatniego wierzchołka oraz wartość korzenia.
     int lastVertex = base[vertices];
     int rootValue = base[0];
@@ -72,7 +71,6 @@ bool BinaryHeap::remove(int element)
         pop();
         return true;
     }
-    vertices--;
     //Jeśli rozmiar tablicy jest większy niż maksymalny, zmniejszamy ją.
     if (size - vertices > MAX_FREE_SPACE)
     {
@@ -85,6 +83,7 @@ bool BinaryHeap::remove(int element)
         copyArray(tempArray, base, vertices);
         delete[] tempArray;
     }
+    vertices--;
     int lastVertex = base[vertices];
     int parentElement = base[(removeIndex - 1) / 2];
     //Jeśli wartość ostatniego liścia jest mniejsza od rodzica naprawiamy drzewo w dół.
